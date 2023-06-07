@@ -52,5 +52,57 @@ body {
 .button button:hover {
     border-color: var(--bac1);
     background-color: var(--bac2);
+}
 
+
+.card {
+    padding: 4px;
+    width: 100%;
+    height: 250px;
+    cursor: pointer;
+    background-color: var(--bac4);
+    /* border-radius: 40px; */
+    border-radius: 24px;
+    background: #a1d8ce;
+    box-shadow: inset -5px -5px 10px #8abab1,
+                inset 5px 5px 10px #b8f6eb;
+    display: flex;
+    /* overflow: hidden; */
+    transition: .2s;
+}
+.card:hover {
+    background: #92c4c4;
+}
+.title {
+    width: 75%;
+}
+.img-card{
+    width: 25%;
+    height: 240px;
+    border-radius: 29px;
+}
+
+
+.head-card {
+    width: 100%;
+}
+
+.price {
+    color: var(--bac6);
+    font-size: 35px;
+    font-weight: 700;
+}
+
+@media (max-width: 776px) {
+    .img-card {
+        width: 100%;
+        height: 250px;
+    }
+    .card {
+        height: 400px;
+        padding-bottom: 10px;
+    }
+    .title {
+        width: 100%;
+    }
 }

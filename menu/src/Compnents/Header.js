@@ -5,7 +5,7 @@ import { Col, Row } from 'react-bootstrap'
 
 const Header = () => {
   return (
-    <Row>
+    <Row >
     <Col ms="12" >
         <div className='d-flex justify-content-center text-center header mt-5'>
             <h2 className='p-2 '>
