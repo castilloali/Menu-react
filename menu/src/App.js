@@ -10,12 +10,36 @@ import { useState } from "react";
 function App() {
 
   const [itemsData, setitemsData] = useState(data)
+
+
+  const filterByCategory = (cat) =>{
+    if(cat === "الكل") {
+      setitemsData(data)
+    }else {
+      const newArr = data.filter((item)=> item.category === cat)
+        setitemsData(newArr)
+      }
+    }
+  
+    const allCategory = ["الكل", ...new Set(data.map((category) => category.category))]
+    
+
+
+
+    const filterBySearch = (word) =>{
+      if(word !== "") {
+        const newArr = data.filter((item)=> item.title === word)
+          setitemsData(newArr)
+        }
+      }
+    
+
   return (
     <div>
-      <Navbarw/>
+      <Navbarw filterBySearch={filterBySearch}/>
     <Container>
       <Header/>
-      <Category/>
+      <Category filterByCategory={filterByCategory} allCategory={allCategory}/>
       <CardList itemsData={itemsData}/>
     </Container>
     </div>

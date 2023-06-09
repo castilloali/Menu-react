@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button,Nav , Container, Form, Navbar, Row } from 'react-bootstrap'
 
 
@@ -6,7 +6,12 @@ import { Button,Nav , Container, Form, Navbar, Row } from 'react-bootstrap'
 
 
 
-const Navbarw = () => {
+const Navbarw = ({filterBySearch}) => {
+  const [search, setSearch] = useState("")
+  const  sendWord = () => {
+    filterBySearch(search)
+  }
+
   return (
     <Row>
         <Navbar className='navbar' expand="lg">
@@ -25,9 +30,10 @@ const Navbarw = () => {
                 type="text"
                 placeholder="ابحث..."
                 className="me-2"
-
+                onChange={(e) => {setSearch(e.target.value)}}
+                value={search}
                 />
-                <Button variant="outline-success">بحث</Button>
+                <Button onClick={() => sendWord(search)} variant="outline-success">بحث</Button>
             </Form>
             </Navbar.Collapse>
         </Container>

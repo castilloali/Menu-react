@@ -11,10 +11,10 @@ const CardList = ({itemsData}) => {
 
                 itemsData.map((items) =>{
                     return (
-                        <Col sm="12" className='mt-2'>
+                        <Col key={items.id} sm="12" className='mt-2'>
                         <div class="card flex-row flex-wrap">
                             
-                            <img className='img-card' src='image/img (1).jpg' />
+                            <img className='img-card' src={items.img} />
                             <div className='title p-3 ' >
                                 <div className='head-card d-flex justify-content-between '>
                                     <h2 className='fw-bold'>{items.title}</h2>
